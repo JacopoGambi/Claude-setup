@@ -1,0 +1,12 @@
+{
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "claude-flow"
+  ],
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/jacop/.claude//**)",
+      "Read(//c/Users/jacop/.claude/projects//**)"
+    ]
+  }
+}

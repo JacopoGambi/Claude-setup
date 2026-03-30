@@ -1,0 +1,85 @@
+# Dipendenze
+node_modules/
+
+# Environment e segreti
+.env
+.env.*
+.env.local
+*.pem
+*.key
+credentials.json
+
+# Build output
+dist/
+build/
+out/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Flow runtime
+data/
+logs/
+sessions/
+neural/
+*.log
+*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+env/
+.env/
+*.egg-info/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# Node / Web
+node_modules/
+.next/
+.nuxt/
+.svelte-kit/
+coverage/
+.turbo/
+.vercel/
+.netlify/
+
+# Mobile (React Native / Expo)
+.expo/
+android/
+ios/
+*.jks
+*.p8
+*.p12
+*.mobileprovision
+*.orig.*
+
+# Java / Android
+*.class
+*.jar
+*.apk
+*.aab
+local.properties
+.gradle/
+
+# Swift / iOS
+*.xcworkspace
+Pods/
+DerivedData/
