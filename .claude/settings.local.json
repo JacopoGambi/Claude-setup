@@ -1,12 +1,35 @@
 {
-  "enableAllProjectMcpServers": true,
-  "enabledMcpjsonServers": [
-    "claude-flow"
-  ],
   "permissions": {
     "allow": [
       "Read(//c/Users/jacop/.claude//**)",
-      "Read(//c/Users/jacop/.claude/projects//**)"
+      "Read(//c/Users/jacop/.claude/projects//**)",
+      "Bash(__NEW_LINE_7bf3aadbd143d2a3__ for:*)",
+      "Bash(do)",
+      "Bash(echo \"=== $file ===\")",
+      "Read(//c/Users/jacop/Desktop/Claude-setup/**)",
+      "Bash(done)",
+      "Bash(cat:*)",
+      "Bash(find C:/Users/jacop/.claude/ -name *.md -path */skills/*)",
+      "Bash(npx @claude-flow/cli@latest --help)",
+      "Bash(CF=\"C:/Users/jacop/AppData/Local/npm-cache/_npx/2ed56890c96f58f7/node_modules/@claude-flow/cli/.claude\")",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/jacop/Desktop/Claude-setup/$CF/**)",
+      "Bash(CF=C:/Users/jacop/AppData/Local/npm-cache/_npx/2ed56890c96f58f7/node_modules/@claude-flow/cli/.claude for f in commands/pair commands/memory commands/training commands/hive-mind commands/coordination)",
+      "Bash(done echo:*)",
+      "Bash(echo 'no root skills dir' find $CF -maxdepth 2 -name *.md ! -path */commands/* ! -path */agents/*)",
+      "Bash(CF=C:/Users/jacop/AppData/Local/npm-cache/_npx/2ed56890c96f58f7/node_modules/@claude-flow/cli/.claude find $CF/skills -name *.md)",
+      "Bash(find C:/Users/jacop/AppData/Roaming/npm/node_modules/@claude-flow -name *.md)",
+      "Bash(find C:/Users/jacop/AppData/Local/npm-cache/_npx/ -maxdepth 3 -name *.md -path *claude-flow*skills*)",
+      "Bash(find C:/Users/jacop/AppData/Roaming/npm -name *.md)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "Read(//tmp/ecc/**)"
     ]
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "claude-flow"
+  ]
 }
