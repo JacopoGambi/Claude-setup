@@ -59,46 +59,46 @@ npm run lint     # Lint
 
 ## Skills & Agents Index
 
-> Tutti invocabili via `Skill("nome")` o `Skill("prefisso:nome")`. Fonti: **SP**=superpowers, **CF**=claude-flow, **BI**=built-in, **PL**=plugin, **ECC**=everything-claude-code.
+> All invokable via `Skill("name")` or `Skill("prefix:name")`. Sources: **SP**=superpowers, **CF**=claude-flow, **BI**=built-in, **PL**=plugin, **ECC**=everything-claude-code.
 
-### ECC Agenti (`~/.claude/agents/`) — invocare via Agent tool
-| Agente | Uso |
-|--------|-----|
-| `architect` | Architettura sistema, scalabilità, decisioni tecniche |
-| `planner` | Pianificazione feature complesse e refactoring |
+### ECC Agents (`~/.claude/agents/`) — invoke via Agent tool
+| Agent | Use |
+|-------|-----|
+| `architect` | System architecture, scalability, technical decisions |
+| `planner` | Complex feature planning and refactoring |
 | `tdd-guide` | TDD: enforcing write-tests-first |
-| `security-reviewer` | Rilevamento vulnerabilità e remediation |
-| `performance-optimizer` | Analisi performance e bottleneck |
-| `refactor-cleaner` | Dead code cleanup e consolidamento |
-| `doc-updater` | Aggiornamento documentazione e codemaps |
-| `docs-lookup` | Ricerca documentazione API via Context7 |
-| `loop-operator` | Monitoring e gestione agent loop autonomi |
-| `harness-optimizer` | Ottimizzazione configurazione agent harness |
-| `code-reviewer` *(superpowers)* | Review implementazioni vs piano |
+| `security-reviewer` | Vulnerability detection and remediation |
+| `performance-optimizer` | Performance analysis and bottlenecks |
+| `refactor-cleaner` | Dead code cleanup and consolidation |
+| `doc-updater` | Documentation and codemaps updates |
+| `docs-lookup` | API documentation search via Context7 |
+| `loop-operator` | Monitoring and management of autonomous agent loops |
+| `harness-optimizer` | Agent harness configuration optimization |
+| `code-reviewer` *(superpowers)* | Review implementations vs plan |
 | **Language Reviewers** | |
 | `python-reviewer` | Python (PEP8, type hints, security) |
 | `typescript-reviewer` | TypeScript/JavaScript |
-| `go-reviewer` | Go idioms e best practice |
-| `rust-reviewer` | Rust ownership e patterns |
-| `java-reviewer` | Java e Spring Boot |
+| `go-reviewer` | Go idioms and best practices |
+| `rust-reviewer` | Rust ownership and patterns |
+| `java-reviewer` | Java and Spring Boot |
 | `kotlin-reviewer` | Kotlin/Android/KMP |
-| `cpp-reviewer` | C++ modern |
-| `flutter-reviewer` | Flutter e Dart |
-| `database-reviewer` | PostgreSQL/Supabase schema e query |
+| `cpp-reviewer` | Modern C++ |
+| `flutter-reviewer` | Flutter and Dart |
+| `database-reviewer` | PostgreSQL/Supabase schema and queries |
 | `healthcare-reviewer` | Clinical safety, PHI compliance |
 | **Build Resolvers** | |
 | `build-error-resolver` | Build/TypeScript errors (minimal diffs) |
-| `go-build-resolver` | Go build failures e vet warnings |
-| `rust-build-resolver` | Rust build e borrow checker |
+| `go-build-resolver` | Go build failures and vet warnings |
+| `rust-build-resolver` | Rust build and borrow checker |
 | `java-build-resolver` | Maven/Gradle build failures |
 | `kotlin-build-resolver` | Kotlin/Gradle compiler errors |
-| `cpp-build-resolver` | CMake e linker problems |
+| `cpp-build-resolver` | CMake and linker problems |
 | `pytorch-build-resolver` | PyTorch/CUDA training errors |
 | **Specialized** | |
 | `e2e-runner` | E2E testing Playwright/Vercel |
-| `chief-of-staff` | Triage email/Slack/comunicazioni |
+| `chief-of-staff` | Email/Slack/communications triage |
 
-### ECC Slash Commands (`/cmd`) — fonte: `~/.claude/commands/`
+### ECC Slash Commands (`/cmd`) — source: `~/.claude/commands/`
 **Workflow:** `/plan` · `/tdd` · `/verify` · `/build-fix` · `/quality-gate`
 **Session:** `/save-session` · `/resume-session` · `/sessions` · `/checkpoint` · `/aside`
 **Review:** `/python-review` · `/go-review` · `/rust-review` · `/cpp-review` · `/kotlin-review`
@@ -112,7 +112,7 @@ npm run lint     # Lint
 **Project:** `/projects` · `/eval` · `/harness-audit` · `/model-route` · `/pm2` · `/setup-pm`
 **Misc:** `/context-budget` · `/promote` · `/instinct-export` · `/instinct-import` · `/instinct-status`
 
-### ECC Skills per Linguaggio/Framework (`~/.claude/skills/`)
+### ECC Skills by Language/Framework (`~/.claude/skills/`)
 **Backend:** `python-patterns` · `python-testing` · `golang-patterns` · `golang-testing` · `rust-patterns` · `rust-testing` · `java-coding-standards` · `jpa-patterns` · `springboot-patterns` · `springboot-tdd` · `springboot-security` · `springboot-verification`
 **Kotlin:** `kotlin-patterns` · `kotlin-testing` · `kotlin-coroutines-flows` · `kotlin-exposed-patterns` · `kotlin-ktor-patterns` · `compose-multiplatform-patterns`
 **PHP/Laravel/Django:** `laravel-patterns` · `laravel-tdd` · `laravel-security` · `laravel-verification` · `laravel-plugin-discovery` · `django-patterns` · `django-tdd` · `django-security` · `django-verification`
@@ -129,211 +129,211 @@ npm run lint     # Lint
 **Research/Content:** `market-research` · `deep-research` · `article-writing` · `search-first` · `exa-search` · `documentation-lookup`
 **Misc:** `perl-patterns` · `perl-testing` · `videodb` · `video-editing` · `x-api` · `fal-ai-media` · `nanoclaw-repl` · `openclaw-persona-forge` · `dmux-workflows` · `claude-devfleet` · `crosspost`
 
-### Workflow & Pianificazione
-| Skill | Fonte | Uso |
-|-------|-------|-----|
-| `superpowers:brainstorming` | SP | Prima di qualsiasi feature/modifica |
-| `superpowers:writing-plans` | SP | Scrivere piano da spec multi-step |
-| `superpowers:executing-plans` | SP | Eseguire piano in sessione separata |
-| `superpowers:subagent-driven-development` | SP | Delegare task indipendenti a subagenti |
-| `superpowers:dispatching-parallel-agents` | SP | 2+ task indipendenti in parallelo |
+### Workflow & Planning
+| Skill | Source | Use |
+|-------|--------|-----|
+| `superpowers:brainstorming` | SP | Before any feature/change |
+| `superpowers:writing-plans` | SP | Write plan from multi-step spec |
+| `superpowers:executing-plans` | SP | Execute plan in a separate session |
+| `superpowers:subagent-driven-development` | SP | Delegate independent tasks to subagents |
+| `superpowers:dispatching-parallel-agents` | SP | 2+ independent tasks in parallel |
 | `sparc-methodology` | CF | Full SPARC (spec→arch→refine→complete) |
-| `sparc:orchestrator` | CF | Orchestrare ciclo SPARC completo |
-| `sparc:batch-executor` | CF | Task multipli in batch |
-| `stream-chain` | CF | Pipeline di agenti in sequenza |
-| `automation:workflow-select` | CF | Selezione workflow ottimale |
+| `sparc:orchestrator` | CF | Orchestrate full SPARC cycle |
+| `sparc:batch-executor` | CF | Multiple tasks in batch |
+| `stream-chain` | CF | Sequential agent pipeline |
+| `automation:workflow-select` | CF | Optimal workflow selection |
 
-### Debug & Qualità
-| Skill | Fonte | Uso |
-|-------|-------|-----|
-| `superpowers:systematic-debugging` | SP | Debug strutturato root cause |
-| `superpowers:test-driven-development` | SP | TDD (test→codice→refactor) |
-| `superpowers:verification-before-completion` | SP | Verifica prima di dichiarare done |
-| `simplify` | BI | Review codice modificato per qualità |
-| `verification-quality` | CF | QA avanzata |
+### Debug & Quality
+| Skill | Source | Use |
+|-------|--------|-----|
+| `superpowers:systematic-debugging` | SP | Structured root cause debugging |
+| `superpowers:test-driven-development` | SP | TDD (test→code→refactor) |
+| `superpowers:verification-before-completion` | SP | Verify before declaring done |
+| `simplify` | BI | Review changed code for quality |
+| `verification-quality` | CF | Advanced QA |
 | `sparc:tdd` | CF | TDD via SPARC |
-| `sparc:tester` | CF | Testing specializzato |
+| `sparc:tester` | CF | Specialized testing |
 | `sparc:debug` / `sparc:debugger` | CF | Debug via SPARC |
 | `sparc:reviewer` | CF | Code review via SPARC |
 | `sparc:security-review` | CF | Security audit |
-| `webapp-testing` | CF | Testing applicazioni web |
+| `webapp-testing` | CF | Web application testing |
 
-### Analisi & Performance
-| Skill | Fonte | Uso |
-|-------|-------|-----|
-| `analysis:performance-bottlenecks` | CF | Bottleneck prestazioni |
-| `analysis:performance-report` | CF | Report prestazioni |
-| `analysis:bottleneck-detect` | CF | Rilevamento bottleneck |
-| `analysis:token-efficiency` | CF | Ottimizzare uso token |
-| `analysis:token-usage` | CF | Report uso token |
-| `analysis:COMMAND_COMPLIANCE_REPORT` | CF | Report compliance comandi |
+### Analysis & Performance
+| Skill | Source | Use |
+|-------|--------|-----|
+| `analysis:performance-bottlenecks` | CF | Performance bottlenecks |
+| `analysis:performance-report` | CF | Performance report |
+| `analysis:bottleneck-detect` | CF | Bottleneck detection |
+| `analysis:token-efficiency` | CF | Optimize token usage |
+| `analysis:token-usage` | CF | Token usage report |
+| `analysis:COMMAND_COMPLIANCE_REPORT` | CF | Command compliance report |
 
 ### Code Review & Branch
-| Skill | Fonte | Uso |
-|-------|-------|-----|
-| `superpowers:requesting-code-review` | SP | Richiedere review al termine feature |
-| `superpowers:receiving-code-review` | SP | Gestire feedback review |
-| `superpowers:finishing-a-development-branch` | SP | Finalizzare branch (merge/PR/cleanup) |
+| Skill | Source | Use |
+|-------|--------|-----|
+| `superpowers:requesting-code-review` | SP | Request review at feature completion |
+| `superpowers:receiving-code-review` | SP | Handle review feedback |
+| `superpowers:finishing-a-development-branch` | SP | Finalize branch (merge/PR/cleanup) |
 | `code-review:code-review` | PL | Review PR via `gh` (slash cmd) |
-| `github:code-review` | CF | Code review GitHub |
-| `github:code-review-swarm` | CF | Review con swarm agenti |
-| `github-code-review` | CF | Skill review avanzata |
+| `github:code-review` | CF | GitHub code review |
+| `github:code-review-swarm` | CF | Review with agent swarm |
+| `github-code-review` | CF | Advanced review skill |
 
 ### GitHub & Repository
-| Skill | Fonte | Uso |
-|-------|-------|-----|
-| `github:pr-manager` | CF | Lifecycle completo PR |
-| `github:pr-enhance` | CF | Migliorare PR esistenti |
-| `github:issue-tracker` | CF | Tracking issue con automazione |
-| `github:issue-triage` | CF | Triage automatico issue |
-| `github:repo-analyze` | CF | Analisi repository |
-| `github:repo-architect` | CF | Struttura repo ottimale |
-| `github:release-manager` | CF | Gestione release/versioni |
-| `github:release-swarm` | CF | Release con swarm coordinato |
-| `github:multi-repo-swarm` | CF | Coordinamento multi-repo |
-| `github:sync-coordinator` | CF | Sincronizzazione cross-repo |
+| Skill | Source | Use |
+|-------|--------|-----|
+| `github:pr-manager` | CF | Full PR lifecycle |
+| `github:pr-enhance` | CF | Improve existing PRs |
+| `github:issue-tracker` | CF | Issue tracking with automation |
+| `github:issue-triage` | CF | Automatic issue triage |
+| `github:repo-analyze` | CF | Repository analysis |
+| `github:repo-architect` | CF | Optimal repo structure |
+| `github:release-manager` | CF | Release/version management |
+| `github:release-swarm` | CF | Release with coordinated swarm |
+| `github:multi-repo-swarm` | CF | Multi-repo coordination |
+| `github:sync-coordinator` | CF | Cross-repo synchronization |
 | `github:workflow-automation` | CF | GitHub Actions automation |
-| `github:project-board-sync` | CF | Sync GitHub Projects |
-| `github:swarm-issue` | CF | Issue → task multi-agente |
+| `github:project-board-sync` | CF | GitHub Projects sync |
+| `github:swarm-issue` | CF | Issue → multi-agent task |
 | `github:swarm-pr` | CF | PR management swarm |
-| `github:github-modes` / `github:github-swarm` | CF | Modalità GitHub avanzate |
-| `github-multi-repo` | CF | Skill multi-repo |
+| `github:github-modes` / `github:github-swarm` | CF | Advanced GitHub modes |
+| `github-multi-repo` | CF | Multi-repo skill |
 | `github-project-management` | CF | Project management |
 | `github-release-management` | CF | Release management |
 | `github-workflow-automation` | CF | Workflow automation |
 
 ### Frontend & UI
-| Skill | Fonte | Uso |
-|-------|-------|-----|
-| `frontend-design` | PL | UI/componenti web production-grade |
-| `sparc:designer` | CF | Design UI via SPARC |
-| `canvas-design` | CF | Design su canvas |
-| `web-artifacts-builder` | CF | Build artifact web interattivi |
-| `algorithmic-art` | CF | Arte generativa/algoritmica |
-| `brand-guidelines` | CF | Linee guida brand |
-| `theme-factory` | CF | Creare temi UI |
+| Skill | Source | Use |
+|-------|--------|-----|
+| `frontend-design` | PL | Production-grade web UI/components |
+| `sparc:designer` | CF | UI design via SPARC |
+| `canvas-design` | CF | Canvas design |
+| `web-artifacts-builder` | CF | Build interactive web artifacts |
+| `algorithmic-art` | CF | Generative/algorithmic art |
+| `brand-guidelines` | CF | Brand guidelines |
+| `theme-factory` | CF | Create UI themes |
 
-### Documentazione & Contenuto
-| Skill | Fonte | Uso |
-|-------|-------|-----|
-| `sparc:docs-writer` / `sparc:documenter` | CF | Documentazione via SPARC |
-| `sparc:tutorial` | CF | Creare tutorial |
-| `doc-coauthoring` | CF | Co-authoring documenti |
-| `pdf` | CF | Lavorare con PDF |
-| `docx` | CF | Lavorare con DOCX |
-| `pptx` | CF | Presentazioni PowerPoint |
-| `xlsx` | CF | Fogli Excel |
-| `internal-comms` | CF | Comunicazioni interne |
-| `slack-gif-creator` | CF | GIF per Slack |
+### Documentation & Content
+| Skill | Source | Use |
+|-------|--------|-----|
+| `sparc:docs-writer` / `sparc:documenter` | CF | Documentation via SPARC |
+| `sparc:tutorial` | CF | Create tutorials |
+| `doc-coauthoring` | CF | Document co-authoring |
+| `pdf` | CF | Work with PDFs |
+| `docx` | CF | Work with DOCX |
+| `pptx` | CF | PowerPoint presentations |
+| `xlsx` | CF | Excel spreadsheets |
+| `internal-comms` | CF | Internal communications |
+| `slack-gif-creator` | CF | GIFs for Slack |
 
 ### Swarm & Multi-Agent
-| Skill | Fonte | Uso |
-|-------|-------|-----|
-| `swarm-advanced` | CF | Orchestrazione swarm avanzata |
-| `swarm-orchestration` | CF | Coordinamento swarm base |
+| Skill | Source | Use |
+|-------|--------|-----|
+| `swarm-advanced` | CF | Advanced swarm orchestration |
+| `swarm-orchestration` | CF | Basic swarm coordination |
 | `sparc:swarm-coordinator` | CF | Swarm via SPARC |
-| `claude-flow-swarm` | CF | Swarm claude-flow |
-| `hive-mind-advanced` | CF | Coordinamento hive-mind |
-| `optimization:auto-topology` | CF | Ottimizzazione topologia swarm |
-| `optimization:topology-optimize` | CF | Topologia agenti |
-| `optimization:parallel-execute` / `optimization:parallel-execution` | CF | Esecuzione parallela |
+| `claude-flow-swarm` | CF | Claude-flow swarm |
+| `hive-mind-advanced` | CF | Hive-mind coordination |
+| `optimization:auto-topology` | CF | Swarm topology optimization |
+| `optimization:topology-optimize` | CF | Agent topology |
+| `optimization:parallel-execute` / `optimization:parallel-execution` | CF | Parallel execution |
 
-### Automazione & Hooks
-| Skill | Fonte | Uso |
-|-------|-------|-----|
-| `hooks-automation` | CF | Automazione via hooks |
-| `hooks:setup` | CF | Configurare hooks |
-| `hooks:pre-task` / `hooks:post-task` | CF | Hooks pre/post task |
-| `hooks:pre-edit` / `hooks:post-edit` | CF | Hooks pre/post edit |
-| `hooks:session-end` | CF | Hook fine sessione |
-| `hooks:overview` | CF | Panoramica hooks disponibili |
-| `automation:auto-agent` | CF | Agenti automatici |
-| `automation:smart-agents` / `automation:smart-spawn` | CF | Agenti intelligenti/spawn |
-| `automation:self-healing` | CF | Auto-riparazione workflow |
-| `automation:session-memory` | CF | Memoria persistente sessione |
-| `loop` | BI | Task ricorrenti a intervallo (es. `loop 5m /cmd`) |
-| `schedule` | BI | Pianificare agenti remoti con cron |
-| `update-config` | BI | Configurare settings.json (hooks, behavior) |
+### Automation & Hooks
+| Skill | Source | Use |
+|-------|--------|-----|
+| `hooks-automation` | CF | Automation via hooks |
+| `hooks:setup` | CF | Configure hooks |
+| `hooks:pre-task` / `hooks:post-task` | CF | Pre/post task hooks |
+| `hooks:pre-edit` / `hooks:post-edit` | CF | Pre/post edit hooks |
+| `hooks:session-end` | CF | Session end hook |
+| `hooks:overview` | CF | Overview of available hooks |
+| `automation:auto-agent` | CF | Automatic agents |
+| `automation:smart-agents` / `automation:smart-spawn` | CF | Smart agents/spawn |
+| `automation:self-healing` | CF | Self-healing workflow |
+| `automation:session-memory` | CF | Persistent session memory |
+| `loop` | BI | Recurring tasks on interval (e.g. `loop 5m /cmd`) |
+| `schedule` | BI | Schedule remote agents with cron |
+| `update-config` | BI | Configure settings.json (hooks, behavior) |
 
 ### Monitoring
-| Skill | Fonte | Uso |
-|-------|-------|-----|
-| `monitoring:status` | CF | Stato sistema agenti |
-| `monitoring:agents` / `monitoring:agent-metrics` | CF | Monitor/metriche agenti |
-| `monitoring:real-time-view` | CF | Vista real-time |
-| `monitoring:swarm-monitor` | CF | Monitor swarm |
-| `optimization:cache-manage` | CF | Gestione cache |
+| Skill | Source | Use |
+|-------|--------|-----|
+| `monitoring:status` | CF | Agent system status |
+| `monitoring:agents` / `monitoring:agent-metrics` | CF | Agent monitor/metrics |
+| `monitoring:real-time-view` | CF | Real-time view |
+| `monitoring:swarm-monitor` | CF | Swarm monitor |
+| `optimization:cache-manage` | CF | Cache management |
 
-### Memoria & AgentDB
-| Skill | Fonte | Uso |
-|-------|-------|-----|
-| `agentdb-advanced` | CF | AgentDB avanzato |
-| `agentdb-learning` | CF | Apprendimento pattern |
-| `agentdb-memory-patterns` | CF | Pattern memoria |
-| `agentdb-optimization` | CF | Ottimizzazione AgentDB |
-| `agentdb-vector-search` | CF | Ricerca vettoriale semantica |
+### Memory & AgentDB
+| Skill | Source | Use |
+|-------|--------|-----|
+| `agentdb-advanced` | CF | Advanced AgentDB |
+| `agentdb-learning` | CF | Pattern learning |
+| `agentdb-memory-patterns` | CF | Memory patterns |
+| `agentdb-optimization` | CF | AgentDB optimization |
+| `agentdb-vector-search` | CF | Semantic vector search |
 | `reasoningbank-agentdb` | CF | ReasoningBank + AgentDB |
-| `reasoningbank-intelligence` | CF | Intelligenza ReasoningBank |
-| `claude-flow-memory` | CF | Memoria persistente claude-flow |
+| `reasoningbank-intelligence` | CF | ReasoningBank intelligence |
+| `claude-flow-memory` | CF | Claude-flow persistent memory |
 
-### SPARC Specializzato
-| Skill | Uso |
+### Specialized SPARC
+| Skill | Use |
 |-------|-----|
-| `sparc:architect` | Architettura sistema |
-| `sparc:coder` / `sparc:code` | Implementazione codice |
-| `sparc:researcher` | Ricerca tecnica |
-| `sparc:analyzer` | Analisi codice |
-| `sparc:optimizer` | Ottimizzazione |
+| `sparc:architect` | System architecture |
+| `sparc:coder` / `sparc:code` | Code implementation |
+| `sparc:researcher` | Technical research |
+| `sparc:analyzer` | Code analysis |
+| `sparc:optimizer` | Optimization |
 | `sparc:devops` | DevOps tasks |
-| `sparc:mcp` | Sviluppo MCP servers |
-| `sparc:integration` | Integrazione sistemi |
-| `sparc:memory-manager` | Gestione memoria |
-| `sparc:spec-pseudocode` | Spec + pseudocodice |
-| `sparc:innovator` | Soluzioni creative |
-| `sparc:ask` | Query al sistema SPARC |
-| `sparc:workflow-manager` | Gestione workflow |
-| `sparc:refinement-optimization-mode` | Modalità rifinitura |
-| `sparc:post-deployment-monitoring-mode` | Monitoring post-deploy |
-| `sparc:supabase-admin` | Admin Supabase |
-| `sparc:sparc` / `sparc:sparc-modes` | SPARC generico/modalità |
+| `sparc:mcp` | MCP server development |
+| `sparc:integration` | System integration |
+| `sparc:memory-manager` | Memory management |
+| `sparc:spec-pseudocode` | Spec + pseudocode |
+| `sparc:innovator` | Creative solutions |
+| `sparc:ask` | SPARC system queries |
+| `sparc:workflow-manager` | Workflow management |
+| `sparc:refinement-optimization-mode` | Refinement mode |
+| `sparc:post-deployment-monitoring-mode` | Post-deploy monitoring |
+| `sparc:supabase-admin` | Supabase admin |
+| `sparc:sparc` / `sparc:sparc-modes` | Generic SPARC/modes |
 
-### Librerie, API & MCP
-| Skill | Fonte | Uso |
-|-------|-------|-----|
-| `context7-mcp` | Custom | Fetch docs librerie (auto-attivato) |
-| `claude-api` | BI | Sviluppare con Claude API/Anthropic SDK |
-| `mcp-builder` | CF | Costruire MCP servers |
+### Libraries, APIs & MCP
+| Skill | Source | Use |
+|-------|--------|-----|
+| `context7-mcp` | Custom | Fetch library docs (auto-activated) |
+| `claude-api` | BI | Develop with Claude API/Anthropic SDK |
+| `mcp-builder` | CF | Build MCP servers |
 | `sparc:mcp` | CF | MCP via SPARC |
-| `pair-programming` | CF | Sessioni pair programming |
-| `browser` | CF | Automazione browser |
+| `pair-programming` | CF | Pair programming sessions |
+| `browser` | CF | Browser automation |
 
 ### v3 & Flow Nexus
-| Skill | Uso |
+| Skill | Use |
 |-------|-----|
-| `v3-core-implementation` | Implementazione core v3 |
-| `v3-ddd-architecture` | DDD architecture v3 |
-| `v3-cli-modernization` | CLI modernization v3 |
-| `v3-integration-deep` | Integrazione profonda v3 |
-| `v3-mcp-optimization` | MCP optimization v3 |
-| `v3-memory-unification` | Unificazione memoria v3 |
-| `v3-performance-optimization` | Ottimizzazione prestazioni v3 |
-| `v3-security-overhaul` | Revisione sicurezza v3 |
-| `v3-swarm-coordination` | Swarm coordination v3 |
+| `v3-core-implementation` | v3 core implementation |
+| `v3-ddd-architecture` | v3 DDD architecture |
+| `v3-cli-modernization` | v3 CLI modernization |
+| `v3-integration-deep` | v3 deep integration |
+| `v3-mcp-optimization` | v3 MCP optimization |
+| `v3-memory-unification` | v3 memory unification |
+| `v3-performance-optimization` | v3 performance optimization |
+| `v3-security-overhaul` | v3 security overhaul |
+| `v3-swarm-coordination` | v3 swarm coordination |
 | `flow-nexus-neural` | Flow Nexus neural patterns |
-| `flow-nexus-platform` | Flow Nexus piattaforma |
+| `flow-nexus-platform` | Flow Nexus platform |
 | `flow-nexus-swarm` | Flow Nexus swarm |
 
-### Configurazione & Meta
-| Skill | Fonte | Uso |
-|-------|-------|-----|
-| `superpowers:using-superpowers` | SP | Intro sistema skills (leggere a inizio conv.) |
-| `superpowers:using-git-worktrees` | SP | Isolare lavoro con worktrees |
-| `superpowers:writing-skills` / `skill-builder` | SP/CF | Creare nuove skills |
-| `skill-creator` | CF | Skill creator avanzato |
-| `keybindings-help` | BI | Personalizzare scorciatoie tastiera |
-| `claude-flow-help` | CF | Aiuto claude-flow |
+### Configuration & Meta
+| Skill | Source | Use |
+|-------|--------|-----|
+| `superpowers:using-superpowers` | SP | Skills system intro (read at session start) |
+| `superpowers:using-git-worktrees` | SP | Isolate work with worktrees |
+| `superpowers:writing-skills` / `skill-builder` | SP/CF | Create new skills |
+| `skill-creator` | CF | Advanced skill creator |
+| `keybindings-help` | BI | Customize keyboard shortcuts |
+| `claude-flow-help` | CF | Claude-flow help |
 
-**Agent `code-reviewer`** (SP) — revisionare implementazioni completate vs piano. Invocare dopo step significativi.
+**Agent `code-reviewer`** (SP) — review completed implementations vs plan. Invoke after significant steps.
 
 ---
 
