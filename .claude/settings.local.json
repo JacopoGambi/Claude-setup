@@ -25,7 +25,14 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:api.github.com)",
-      "Read(//tmp/ecc/**)"
+      "Read(//tmp/ecc/**)",
+      "Bash(gh api:*)",
+      "Bash(curl -s \"https://raw.githubusercontent.com/thedotmack/claude-mem/main/plugin/skills/mem-search/SKILL.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/claude-code-security-review/main/.claude/commands/security-review.md\")",
+      "Bash(powershell:*)",
+      "Bash(n\\\\\")",
+      "Bash(powershell.exe -Command 'Invoke-WebRequest -Uri '\\\\''https://api.github.com/repos/Leonxlnx/taste-skill/contents/skills/__TRACKED_VAR__'\\\\'' -UseBasicParsing | Select-Object -ExpandProperty Content')",
+      "Bash(python -m scripts \"C:\\\\Users\\\\jacop\\\\Desktop\\\\Claude-setup\\\\CLAUDE.md\")"
     ]
   },
   "enableAllProjectMcpServers": true,

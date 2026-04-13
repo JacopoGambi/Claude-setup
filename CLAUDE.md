@@ -2,23 +2,23 @@
 
 ## Behavioral Rules
 
-- Do what has been asked; nothing more, nothing less
+- Do what asked; no more, no less
 - NEVER create files unless absolutely necessary
-- ALWAYS prefer editing an existing file to creating a new one
-- NEVER proactively create documentation files (*.md) or README files unless explicitly requested
-- NEVER save working files, text/mds, or tests to the root folder
-- ALWAYS read a file before editing it
+- ALWAYS prefer editing existing file over new one
+- NEVER proactively create docs (*.md) or README unless explicitly requested
+- NEVER save working files, text/mds, or tests to root folder
+- ALWAYS read file before editing
 - NEVER commit secrets, credentials, or .env files
 
 ## Context & Continuity
 
-- **Start of conversation**: ALWAYS read `backup/SUMMARY.md` before doing anything else, to reconstruct context from previous sessions.
-- **End of task**: Update `backup/SUMMARY.md` with a concise entry for what was done. Format: `## [YYYY-MM-DD HH:MM] [title]\n<2-3 sentence summary>`. Keep only the last 30 entries.
-- **New libraries**: Before using any new library or framework, consult Context7 for up-to-date documentation.
+- **Start of conversation**: ALWAYS read `backup/SUMMARY.md` before anything else — reconstructs context from prior sessions.
+- **End of task**: Update `backup/SUMMARY.md` with concise entry. Format: `## [YYYY-MM-DD HH:MM] [title]\n<2-3 sentence summary>`. Keep last 30 entries only.
+- **New libraries**: Consult Context7 before using any new library or framework.
 
 ## File Organization
 
-- NEVER save to root folder — use the directories below:
+- NEVER save to root — use:
   - `/src` — source code
   - `/tests` — test files
   - `/docs` — documentation
@@ -28,10 +28,10 @@
 
 ## Code Quality
 
-- Keep files under 500 lines
-- Use typed interfaces for public APIs
+- Files under 500 lines
+- Typed interfaces for public APIs
 - Validate input at system boundaries
-- Write tests for new code
+- Tests for new code
 
 ## Build & Test
 
@@ -41,21 +41,21 @@ npm test         # Test
 npm run lint     # Lint
 ```
 
-- ALWAYS run tests after making code changes
-- ALWAYS verify build succeeds before committing
+- ALWAYS run tests after code changes
+- ALWAYS verify build before committing
 
 ## Security
 
-- NEVER hardcode API keys, secrets, or credentials in source files
-- NEVER commit .env files or any file containing secrets
+- NEVER hardcode API keys, secrets, or credentials
+- NEVER commit .env or secret-containing files
 - Validate user input at system boundaries
-- Sanitize file paths to prevent directory traversal
+- Sanitize file paths against directory traversal
 
 ## Efficiency
 
-- Batch related operations in a single message (parallel reads, writes, commands)
-- When spawning agents, put ALL agent calls in ONE message with `run_in_background: true`
-- After spawning agents, STOP — do NOT poll status, wait for results
+- Batch related ops in single message (parallel reads, writes, commands)
+- Spawning agents: ALL calls in ONE message with `run_in_background: true`
+- After spawning agents, STOP — no polling, wait for results
 
 ## Skills & Agents Index
 
@@ -70,10 +70,10 @@ npm run lint     # Lint
 | `security-reviewer` | Vulnerability detection and remediation |
 | `performance-optimizer` | Performance analysis and bottlenecks |
 | `refactor-cleaner` | Dead code cleanup and consolidation |
-| `doc-updater` | Documentation and codemaps updates |
-| `docs-lookup` | API documentation search via Context7 |
-| `loop-operator` | Monitoring and management of autonomous agent loops |
-| `harness-optimizer` | Agent harness configuration optimization |
+| `doc-updater` | Docs and codemaps updates |
+| `docs-lookup` | API doc search via Context7 |
+| `loop-operator` | Monitor/manage autonomous agent loops |
+| `harness-optimizer` | Agent harness config optimization |
 | `code-reviewer` *(superpowers)* | Review implementations vs plan |
 | **Language Reviewers** | |
 | `python-reviewer` | Python (PEP8, type hints, security) |
@@ -110,6 +110,7 @@ npm run lint     # Lint
 **Refactor:** `/refactor-clean` · `/prompt-optimize` · `/prune`
 **Docs:** `/update-docs` · `/update-codemaps`
 **Project:** `/projects` · `/eval` · `/harness-audit` · `/model-route` · `/pm2` · `/setup-pm`
+**Security:** `/security-review`
 **Misc:** `/context-budget` · `/promote` · `/instinct-export` · `/instinct-import` · `/instinct-status`
 
 ### ECC Skills by Language/Framework (`~/.claude/skills/`)
@@ -118,6 +119,9 @@ npm run lint     # Lint
 **PHP/Laravel/Django:** `laravel-patterns` · `laravel-tdd` · `laravel-security` · `laravel-verification` · `laravel-plugin-discovery` · `django-patterns` · `django-tdd` · `django-security` · `django-verification`
 **C++:** `cpp-coding-standards` · `cpp-testing`
 **Frontend:** `frontend-patterns` · `frontend-slides` · `nextjs-turbopack` · `nuxt4-patterns` · `swiftui-patterns` · `liquid-glass-design` · `design-system`
+**Design/UI (Emil):** `emil-design-eng`
+**Design/UI (Impeccable):** `impeccable` · `adapt` · `animate` · `audit` · `bolder` · `clarify` · `colorize` · `critique` · `delight` · `distill` · `harden` · `layout` · `optimize` · `overdrive` · `polish` · `quieter` · `shape` · `typeset`
+**Design/UI (Taste):** `taste-skill` · `brutalist-skill` · `minimalist-skill` · `soft-skill` · `stitch-skill` · `redesign-skill` · `output-skill`
 **Swift:** `swift-concurrency-6-2` · `swift-actor-persistence` · `swift-protocol-di-testing`
 **Mobile:** `android-clean-architecture` · `flutter-dart-code-review` · `pytorch-patterns`
 **Infra:** `docker-patterns` · `deployment-patterns` · `database-migrations` · `postgres-patterns` · `git-workflow` · `bun-runtime` · `clickhouse-io`
@@ -129,12 +133,23 @@ npm run lint     # Lint
 **Research/Content:** `market-research` · `deep-research` · `article-writing` · `search-first` · `exa-search` · `documentation-lookup`
 **Misc:** `perl-patterns` · `perl-testing` · `videodb` · `video-editing` · `x-api` · `fal-ai-media` · `nanoclaw-repl` · `openclaw-persona-forge` · `dmux-workflows` · `claude-devfleet` · `crosspost`
 
+### Memory & Code Navigation (claude-mem)
+> Richiedono plugin claude-mem MCP attivo su localhost:37777
+| Skill | Use |
+|-------|-----|
+| `mem-search` | Cerca lavoro passato in sessioni precedenti |
+| `smart-explore` | Esplorazione codice AST-based (4-18x risparmio token) |
+| `knowledge-agent` | Corpus conoscenza interrogabile da osservazioni passate |
+| `do` | Esegue piani a fasi con subagent come orchestratore |
+| `make-plan` | Crea piani implementativi con discovery documentazione |
+| `timeline-report` | Report narrativo "Journey Into [Project]" dalla cronologia |
+
 ### Workflow & Planning
 | Skill | Source | Use |
 |-------|--------|-----|
 | `superpowers:brainstorming` | SP | Before any feature/change |
 | `superpowers:writing-plans` | SP | Write plan from multi-step spec |
-| `superpowers:executing-plans` | SP | Execute plan in a separate session |
+| `superpowers:executing-plans` | SP | Execute plan in separate session |
 | `superpowers:subagent-driven-development` | SP | Delegate independent tasks to subagents |
 | `superpowers:dispatching-parallel-agents` | SP | 2+ independent tasks in parallel |
 | `sparc-methodology` | CF | Full SPARC (spec→arch→refine→complete) |
@@ -156,7 +171,7 @@ npm run lint     # Lint
 | `sparc:debug` / `sparc:debugger` | CF | Debug via SPARC |
 | `sparc:reviewer` | CF | Code review via SPARC |
 | `sparc:security-review` | CF | Security audit |
-| `webapp-testing` | CF | Web application testing |
+| `webapp-testing` | CF | Web app testing |
 
 ### Analysis & Performance
 | Skill | Source | Use |
@@ -191,7 +206,7 @@ npm run lint     # Lint
 | `github:release-manager` | CF | Release/version management |
 | `github:release-swarm` | CF | Release with coordinated swarm |
 | `github:multi-repo-swarm` | CF | Multi-repo coordination |
-| `github:sync-coordinator` | CF | Cross-repo synchronization |
+| `github:sync-coordinator` | CF | Cross-repo sync |
 | `github:workflow-automation` | CF | GitHub Actions automation |
 | `github:project-board-sync` | CF | GitHub Projects sync |
 | `github:swarm-issue` | CF | Issue → multi-agent task |
@@ -213,10 +228,40 @@ npm run lint     # Lint
 | `brand-guidelines` | CF | Brand guidelines |
 | `theme-factory` | CF | Create UI themes |
 
+### Design & Visual Style
+| Skill | Source | Use |
+|-------|--------|-----|
+| `emil-design-eng` | emilkowalski/skill | Filosofia UI di Emil: polish, animazioni, dettagli invisibili |
+| `impeccable` | pbakaus/impeccable | Principi base design + Context Gathering Protocol (**prerequisito** per skill sotto) |
+| `adapt` | pbakaus/impeccable | Responsive design, breakpoint, layout fluidi |
+| `animate` | pbakaus/impeccable | Animazioni e transizioni |
+| `audit` | pbakaus/impeccable | Audit del design |
+| `bolder` | pbakaus/impeccable | Design più impattante/audace |
+| `clarify` | pbakaus/impeccable | Chiarezza visiva |
+| `colorize` | pbakaus/impeccable | Palette colori |
+| `critique` | pbakaus/impeccable | Critica del design |
+| `delight` | pbakaus/impeccable | Microinterazioni piacevoli |
+| `distill` | pbakaus/impeccable | Riduzione/semplificazione visiva |
+| `harden` | pbakaus/impeccable | Robustezza del design |
+| `layout` | pbakaus/impeccable | Struttura e composizione |
+| `optimize` | pbakaus/impeccable | Ottimizzazione UI |
+| `overdrive` | pbakaus/impeccable | Stile estremo/drammatico |
+| `polish` | pbakaus/impeccable | Rifinitura finale |
+| `quieter` | pbakaus/impeccable | Design più sobrio/minimale |
+| `shape` | pbakaus/impeccable | Forme e geometrie |
+| `typeset` | pbakaus/impeccable | Tipografia |
+| `taste-skill` | Leonxlnx/taste-skill | Estetica generale con "gusto" |
+| `brutalist-skill` | Leonxlnx/taste-skill | UI industriale/brutalist (griglie rigide, CRT) |
+| `minimalist-skill` | Leonxlnx/taste-skill | Design minimalista |
+| `soft-skill` | Leonxlnx/taste-skill | Stile morbido/soft |
+| `stitch-skill` | Leonxlnx/taste-skill | Stile hand-crafted/artigianale |
+| `redesign-skill` | Leonxlnx/taste-skill | Riprogettazione UI |
+| `output-skill` | Leonxlnx/taste-skill | Output di design |
+
 ### Documentation & Content
 | Skill | Source | Use |
 |-------|--------|-----|
-| `sparc:docs-writer` / `sparc:documenter` | CF | Documentation via SPARC |
+| `sparc:docs-writer` / `sparc:documenter` | CF | Docs via SPARC |
 | `sparc:tutorial` | CF | Create tutorials |
 | `doc-coauthoring` | CF | Document co-authoring |
 | `pdf` | CF | Work with PDFs |
@@ -354,4 +399,4 @@ npx @claude-flow/cli@latest memory search --query "search term"
 
 - Claude Code's Task tool handles execution (agents, file ops, code, git)
 - CLI tools handle coordination (swarm init, memory, hooks)
-- NEVER use CLI tools as a substitute for Task tool agents
+- NEVER use CLI tools as substitute for Task tool agents
