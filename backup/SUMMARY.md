@@ -8,3 +8,6 @@ Analizzata https://github.com/mattpocock/skills (25 skill di processo: grilling,
 
 ## [2026-09-03 01:55] Adozione mattpocock-skills e snellimento template
 Installato plugin `mattpocock-skills@claude-plugins-official` (scope user, v1.2.3). CLAUDE.md riscritto da 20KB a 2.2KB (copia precedente in backup/CLAUDE.md.pre-2026-09-03), indice skill rimosso. Aggiunti CONTEXT.md template e docs/adr/, `*.pdf` in .gitignore, new-project.sh copia i nuovi file e suggerisce /setup-matt-pocock-skills. Nulla committato.
+
+## [2026-09-03 02:10] Setup mattpocock-skills nel template
+Eseguito a mano /setup-matt-pocock-skills (skill non caricata in sessione): tracker locale `.scratch/`, label triage default, single-context. Scritti docs/agents/{issue-tracker,domain,triage-labels}.md; CLAUDE.md ha blocco `## Agent skills` al posto di "Linguaggio del dominio"; new-project.sh copia docs/agents/. Non committato.

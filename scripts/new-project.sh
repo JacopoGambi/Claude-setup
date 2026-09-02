@@ -23,13 +23,14 @@ cp "$TEMPLATE_DIR/CLAUDE.md" "$TARGET/"
 cp "$TEMPLATE_DIR/.gitignore" "$TARGET/"
 cp "$TEMPLATE_DIR/.env.example" "$TARGET/" 2>/dev/null
 cp "$TEMPLATE_DIR/CONTEXT.md" "$TARGET/"
-mkdir -p "$TARGET/docs/adr" "$TARGET/backup"
+mkdir -p "$TARGET/docs/adr" "$TARGET/docs/agents" "$TARGET/backup"
+cp "$TEMPLATE_DIR"/docs/agents/*.md "$TARGET/docs/agents/"
 cp "$TEMPLATE_DIR/backup/SUMMARY.md" "$TARGET/backup/" 2>/dev/null
 
 echo "Progetto creato in: $TARGET"
-echo "File copiati: .claude/ CLAUDE.md CONTEXT.md docs/adr/ backup/SUMMARY.md .gitignore .env.example"
+echo "File copiati: .claude/ CLAUDE.md CONTEXT.md docs/adr/ docs/agents/ backup/SUMMARY.md .gitignore .env.example"
 echo ""
 echo "Prossimi passi:"
 echo "  cd $TARGET"
 echo "  claude"
-echo "  /setup-matt-pocock-skills   (scegli tracker locale .scratch/)"
+echo "  /grill-with-docs            (tracker locale .scratch/ gia' configurato)"
