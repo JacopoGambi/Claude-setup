@@ -11,3 +11,6 @@ Installato plugin `mattpocock-skills@claude-plugins-official` (scope user, v1.2.
 
 ## [2026-09-03 02:10] Setup mattpocock-skills nel template
 Eseguito a mano /setup-matt-pocock-skills (skill non caricata in sessione): tracker locale `.scratch/`, label triage default, single-context. Scritti docs/agents/{issue-tracker,domain,triage-labels}.md; CLAUDE.md ha blocco `## Agent skills` al posto di "Linguaggio del dominio"; new-project.sh copia docs/agents/. Non committato.
+
+## [2026-09-03 02:45] Pulizia template (punti 1,3,4,5)
+settings.json spostato in .claude/settings.json (ora attivo: deny .env, permessi claude-flow); settings.local.json rimosso dal tracking e in .gitignore. Eliminate 14 cartelle superpowers vuote e frontend-design (duplicato del plugin); skill github-* mantenute (vengono da claude-flow, non dal plugin github). 25 skill rinominate da `skills<nome>` a `<nome>` reale. new-project.sh ora copia package.json. Nulla committato.

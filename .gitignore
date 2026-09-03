@@ -86,3 +86,6 @@ DerivedData/
 
 # Documenti pesanti / dispense
 *.pdf
+
+# Claude Code: impostazioni locali per macchina
+.claude/settings.local.json
